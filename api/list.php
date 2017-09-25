@@ -20,7 +20,7 @@ class Search {
 		if (isset($request) && is_string($request)) {
 			$request = '%' . $request . '%';
 
-			$sql = self::$_pdo->prepare("SELECT id, ORIGGPFR, ORIGFDNM FROM ". $this->_table . " WHERE ORIGGPFR LIKE ? OR ORIGFDNM LIKE ? ");
+			$sql = self::$_pdo->prepare("SELECT id, ORIGGPFR, ORIGFDNM FROM ". $this->_table . " WHERE UPPER(ORIGGPFR) LIKE UPPER(?) OR UPPER(ORIGFDNM) LIKE UPPER(?) ");
 			$sql->execute(array($request, $request));
 
 			return $sql->fetchAll(PDO::FETCH_ASSOC);
