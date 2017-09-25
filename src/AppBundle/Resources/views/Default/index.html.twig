@@ -1,18 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Quizz
-{% endblock %}
-{% block titlecontent %}
-  <h1> Bienvenue sur <br><span> My Quizz </span> ! </h1>
-{% endblock %}
-{% block subtitlecontent %}
-  	<p> Choisissez un thème : </p>
-{% endblock %}
-{% block maincontent %}
-	<ul id='quizz'>
-		{% for theme in themes %}
-		<li><a href={{ path('quizz_show', {'id': theme.id }) }}> {{ theme.name }} </a></li>
-		{% endfor %}
-	</ul>
+{% block body %}
+	{{ form_start(form) }}
+		{{ form_widget(form) }}
+	{{ form_end(form) }}
 {% endblock %}
