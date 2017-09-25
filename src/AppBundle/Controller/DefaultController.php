@@ -13,9 +13,21 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $default = array('default' => 'Your search here');
+        $form = $this->createFormBuilder($default)
+            ->add('search', TextType::class)
+            ->add('send', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        /*if ($form->isSubmitted() && $form->isValid()) {
+
+        }*/
+
+        return $this->render('AppBundle:Default:index.html.twig', array(
+            'form' => $form,
+            )
+        );
     }
 }
