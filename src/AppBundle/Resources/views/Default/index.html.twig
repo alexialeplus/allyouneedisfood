@@ -4,4 +4,10 @@
 	{{ form_start(form) }}
 		{{ form_widget(form) }}
 	{{ form_end(form) }}
+	{% for product in results %}
+		<ul>
+			<li> {{ product.ORIGFDNM }}</li>
+			<li> {{ product.ORIGGPFR }}</li>
+		</ul>
+	{% endfor %}
 {% endblock %}

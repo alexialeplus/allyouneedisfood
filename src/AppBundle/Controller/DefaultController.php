@@ -25,6 +25,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $result = $request->query->get('form');
             $userSearch = $result['search'];
 
@@ -35,6 +36,12 @@ class DefaultController extends Controller
 
             $response = curl_exec($curl);
             $searchResult = json_decode($response, true);
+
+            return $this->render('AppBundle:Default:index.html.twig', array(
+                'form' => $form->createView(),
+                'results' => $searchResult,
+                )
+            );
 
         }
 
