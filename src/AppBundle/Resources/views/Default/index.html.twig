@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{{ form_start(form) }}
+		{{ form_widget(form) }}
+	{{ form_end(form) }}
+	{% if results is defined %}
+		{% for product in results %}
+			<ul>
+				<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a></li>
+				<li> {{ product.ORIGGPFR }}</li>
+			</ul>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
