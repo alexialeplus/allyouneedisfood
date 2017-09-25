@@ -56,7 +56,7 @@ class DefaultController extends Controller
      * @Route("/{id}", name="show_product")
      */
     public function show($id) {
-        if (isset($id) && is_int($id)) {
+        if (isset($id) && is_numeric($id)) {
 
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, "http://localhost/api/api.php?id=" . $id);
@@ -65,10 +65,11 @@ class DefaultController extends Controller
 
             $response = curl_exec($curl);
             $productDetail = json_decode($response, true);
-
-            dump($productDetail);
         }
 
-        return $this->render('AppBundle:Default:show.html.twig');
+        return $this->render('AppBundle:Default:show.html.twig', array(
+            'product' => $productDetail, 
+            )
+        );
     }
 }

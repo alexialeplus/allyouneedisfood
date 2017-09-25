@@ -6,7 +6,7 @@
 	{{ form_end(form) }}
 	{% for product in results %}
 		<ul>
-			<li> {{ product.ORIGFDNM }}</li>
+			<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a></li>
 			<li> {{ product.ORIGGPFR }}</li>
 		</ul>
 	{% endfor %}
