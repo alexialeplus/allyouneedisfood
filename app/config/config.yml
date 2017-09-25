@@ -69,15 +69,3 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-# Restbundle Configuration
-fos_rest:
-    body_converter:
-        enabled: true
-    view:
-        formats: { json: true, xml: false, rss: false }
-    serializer:
-        serialize_null: true
-
-#Sension Configuration
-sensio_framework_extra:
-    view: { annotations: false }
