@@ -1,6 +1,6 @@
 <?php
 
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 
 if (isset($_GET['q']) && is_string($_GET['q'])) {
 	require('list.php');
