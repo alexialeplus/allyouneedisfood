@@ -1,19 +1,20 @@
 <?php
 
-header('Content-Type: application/json');
-
-require('list.php');
-$array = array();
-$array['status'] = 'OK';
-$json = json_encode($array);
+//header('Content-Type: application/json');
 
 if (isset($_GET['q']) && is_string($_GET['q'])) {
+	require('list.php');
+
 	$search = new Search();
 	$result = $search->search($_GET['q']);
 	echo json_encode($result);
 }
-elseif (isset($_GET['id'] && is_int($_GET['id']))) {
-	
+
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+	require('show.php');
+
+	$product = new Product();
+	//$product->echodump();
 }
 
 ?>
