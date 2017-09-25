@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 21 Septembre 2017 à 12:23
+-- Généré le :  Lun 25 Septembre 2017 à 14:02
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `aliments` (
-  `id` int(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `ORIGGPCD` decimal(3,1) DEFAULT NULL,
   `ORIGGPFR` varchar(50) DEFAULT NULL,
   `ORIGFDCD` int(5) DEFAULT NULL,
@@ -2818,7 +2818,7 @@ ALTER TABLE `aliments`
 -- AUTO_INCREMENT pour la table `aliments`
 --
 ALTER TABLE `aliments`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2643;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2643;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
