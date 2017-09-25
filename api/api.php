@@ -14,7 +14,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 	require('show.php');
 
 	$product = new Product();
-	//$product->echodump();
+	var_dump($product->show($_GET['id']));
 }
 
 ?>
