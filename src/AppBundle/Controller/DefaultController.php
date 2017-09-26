@@ -18,8 +18,8 @@ class DefaultController extends Controller
         $default = array('default' => 'Your search here');
         $form = $this->createFormBuilder()
             ->setMethod('GET')
-            ->add('search', TextType::class, array('label' => false))
-            ->add('send', SubmitType::class)
+            ->add('search', TextType::class, array('label' => false, 'attr' => array('placeholder' => 'Tapez votre ingrédient ici')))
+            ->add('Ok', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);

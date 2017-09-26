@@ -3,20 +3,22 @@
 {% block title %} Accueil {% endblock %}
 
 {% block body %}
-	<h1> AllYouNeedIsFood. </h1>
-	<h2> Des données nutritionnelless accessibles à tous. Avec AllYouNeedIsFood, la nourriture ne pourra plus rien vous cacher ! </h2>
+	<h1 class="text-right"> AllYouNeedIsFood. </h1>
+	<h2 class="text-center"> Des données nutritionnelless accessibles à tous. Avec AllYouNeedIsFood, la nourriture ne pourra plus rien vous cacher ! </h2>
 
-	{{ form_start(form) }}
+	{{ form_start(form, {'attr': {'class': 'text-center'} }) }}
 		{{ form_widget(form) }}
 	{{ form_end(form) }}
 
 	{% if results is defined %}
-		<h3> Voici les résultats de votre recherche : </h3>
-		{% for product in results %}
-			<ul>
-				<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a></li>
-				<li> {{ product.ORIGGPFR }}</li>
-			</ul>
-		{% endfor %}
+		<div class="text-center">
+			<h3> Voici les résultats de votre recherche : </h3>
+			{% for product in results %}
+				<ul>
+					<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a>
+					<p> {{ product.ORIGGPFR }}</p></li>
+				</ul>
+			{% endfor %}
+		</div>
 	{% endif %}
 {% endblock %}
