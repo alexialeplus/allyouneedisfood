@@ -65,6 +65,8 @@ class DefaultController extends Controller
 
             $response = curl_exec($curl);
             $productDetail = json_decode($response, true);
+
+            dump($productDetail);
         }
 
         return $this->render('AppBundle:Default:show.html.twig', array(
