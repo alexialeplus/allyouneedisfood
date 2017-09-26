@@ -1,0 +1,33 @@
+body {
+	background-color: #F6F2ED;
+}
+
+h1 {
+	color: #8CBD01;
+}
+
+h2 {
+	margin-top: 10%;
+}
+
+input[type=text] {
+	padding: 15px;
+	width: 50%; 
+}
+
+button {
+	padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 2%;
+    border-radius: 5px;
+    border: none;
+    background-color: #8cbd01;
+    color: white;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    font-size: 22px;
+}
+
+.bg-green {
+	color: #8CBD01;
+}

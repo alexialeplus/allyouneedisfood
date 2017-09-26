@@ -3,8 +3,8 @@
 {% block title %} Accueil {% endblock %}
 
 {% block body %}
-	<h1 class="text-right"> AllYouNeedIsFood. </h1>
-	<h2 class="text-center"> Des données nutritionnelless accessibles à tous. Avec AllYouNeedIsFood, la nourriture ne pourra plus rien vous cacher ! </h2>
+	<h1 class="text-right mt-5"> AllYouNeedIsFood. </h1>
+	<h2 class="text-center mb-5"> Des données nutritionnelles accessibles à tous. Avec AllYouNeedIsFood, la nourriture ne pourra plus rien vous cacher ! </h2>
 
 	{{ form_start(form, {'attr': {'class': 'text-center'} }) }}
 		{{ form_widget(form) }}
@@ -12,11 +12,11 @@
 
 	{% if results is defined %}
 		<div class="text-center">
-			<h3> Voici les résultats de votre recherche : </h3>
+			<h4 class="mt-5 mb-5 pt-2 pb-2 bg-green rounded-top"> Voici les résultats de votre recherche : </h3>
 			{% for product in results %}
 				<ul>
 					<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a>
-					<p> {{ product.ORIGGPFR }}</p></li>
+					<p class="font-italic text-secondary"> {{ product.ORIGGPFR }}</p></li>
 				</ul>
 			{% endfor %}
 		</div>
