@@ -10,15 +10,19 @@
 		{{ form_widget(form) }}
 	{{ form_end(form) }}
 
-	{% if results is defined %}
+	{% if results is defined and results is not empty %}
 		<div class="text-center">
-			<h4 class="mt-5 mb-5 pt-2 pb-2 bg-green rounded-top"> Voici les résultats de votre recherche : </h3>
+			<h4 class="mt-5 mb-5 pt-2 pb-2 bg-green rounded-top"> Voici les résultats de votre recherche : </h4>
 			{% for product in results %}
 				<ul>
 					<li><a href={{ path('show_product', {'id' : product.id }) }}> {{ product.ORIGFDNM }}</a>
 					<p class="font-italic text-secondary"> {{ product.ORIGGPFR }}</p></li>
 				</ul>
 			{% endfor %}
+		</div>
+	{% elseif results is defined and results is empty %}
+		<div class="text-center">
+			<h4 class="mt-5 mb-5 pt-2 pb-2 bg-green rounded-top"> Aucun résultat pour votre recherche </h4>
 		</div>
 	{% endif %}
 {% endblock %}

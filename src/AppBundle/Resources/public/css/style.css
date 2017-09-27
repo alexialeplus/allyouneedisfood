@@ -29,5 +29,13 @@ button {
 }
 
 .bg-green {
-	color: #8CBD01;
+	color: #01823C;
+}
+
+nav {
+	background-color: white;
+}
+
+nav a {
+	color: #01823C;
 }
